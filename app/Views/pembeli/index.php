@@ -8,7 +8,10 @@
 </head>
 
 <body>
+    <?= $this->extend('layout/pembeli'); ?>
+    <?= $this->section('pembeli'); ?>
     <h1>Home Pembeli</h1>
+     <?= $this->endSection(); ?>
 </body>
 
 </html>
