@@ -1,0 +1,71 @@
+
+.container{
+    width: 100%;
+    background-color: var(--bg);
+}
+.column{
+    float: left;
+    height: fit-content;
+}
+#p{
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 36px;
+}
+#h3{padding-top: 20px;
+    font-family: Roboto;
+    font-size: var(--subJudul);
+    font-weight: 600;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.column{
+    float: left;
+}
+#profil{
+    background-color: var(--kuning);
+    margin-top: 64px;
+    margin-left: 60px;
+    padding: 8px;
+    border: 1px;
+    border-radius: 60px;
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 36px;
+}
+#profilImage{
+    background: url('https://api.iconify.design/gg:profile.svg') no-repeat center center / contain;
+    border-style: hidden;
+}
+#h3{padding-top: 20px;
+    font-family: Roboto;
+    font-size: var(--subJudul);
+    font-weight: 600;
+}
+#search{
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 36px;
+}
+#judul{
+    font-weight: 600;
+    font-family: Roboto;
+    font-size: 80px;
+}
+#posisiFix{
+        position: fixed;
+        top: 80px;
+        right: 11vw;
+}
+:root {
+    --bg: #C6BAA4;
+    --kuning:#EDD989;
+    --text: 36px;
+    --subJudul:48px;
+  }
+  
+

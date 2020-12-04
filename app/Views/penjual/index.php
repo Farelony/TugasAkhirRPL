@@ -8,7 +8,10 @@
 </head>
 
 <body>
+<?= $this->extend('layout/profil'); ?>
+    <?= $this->section('profil'); ?>
     <h1>Home Penjual</h1>
+     <?= $this->endSection(); ?>
 </body>
 
 </html>
