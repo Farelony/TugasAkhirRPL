@@ -101,5 +101,10 @@ class Auth extends BaseController
         session()->setFlashdata('pesan', 'Data anda berhasil ditambahkan');
         return redirect()->to('/');
     }
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/');
+    }
     //--------------------------------------------------------------------
 }

@@ -57,15 +57,48 @@
     font-size: 80px;
 }
 #posisiFix{
-        position: fixed;
+        position: absolute;
         top: 80px;
-        right: 11vw;
+        right: 3vw;
 }
 :root {
     --bg: #C6BAA4;
     --kuning:#EDD989;
     --text: 36px;
     --subJudul:48px;
-  }
-  
+}
+* {
+    box-sizing: border-box;
+}
 
+.container-datadiri {
+    background-color: #EDD989;
+    padding-top: 70px;
+    padding-left: 64px;
+    padding-bottom: 50px;
+    padding-right: 1%;
+}
+
+#edit {
+    float: right;
+    vertical-align: bottom;
+    font-family: Roboto;
+    text-decoration: underline;
+    font-size: 32px;
+    font-weight: 100;
+    margin-right: 2vw;
+}
+
+#judul {
+    font-family: Roboto;
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+#subJudul {
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 300;
+}
+  
