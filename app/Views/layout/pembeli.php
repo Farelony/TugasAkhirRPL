@@ -5,8 +5,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <link rel="stylesheet" href="<?= base_url() ?>/assets/assets_profil/publicStyle.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/assets_profil/list.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/assets_profil/detail.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <title><?= $title ?></title>
 </head>
@@ -21,8 +24,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <form class="form-inline" style="width: 60vw;">
-                        <input class="form-control" id="search" type="search" placeholder="Cari Tanaman Hias di sini..." aria-label="search" style="width:50vw;height: 48px;">
+                    <form class="form-inline" method="POST" action="/pembeli/listproduk" style="width: 60vw;">
+                        <input class="form-control" name="search" id="search" type="text" placeholder="Cari Tanaman Hias di sini..." aria-label="search" style="width:50vw;height: 48px;">
                         <button class="btn" type="submit">
                             <iconify-icon data-icon="ant-design:search-outlined" style="width: auto; height: 48px;"></iconify-icon>
                         </button>
@@ -43,7 +46,7 @@
         </nav>
     </div>
     <?= $this->renderSection('pembeli'); ?>
-    <div class="container-fluid" style="background-color: #C6BAA4;">
+    <div class="container-fluid" style="background-color: #C6BAA4;margin-left:10px;margin-right:10px">
         <div class="row" style="margin-left: 1%;">
             <div class="column" id="h3" style="width: 98%;">Customer Service</div>
             <div class="column" id="p" style="width: 18%;">081122334455</div>

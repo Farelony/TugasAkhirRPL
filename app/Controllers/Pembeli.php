@@ -18,11 +18,13 @@ class Pembeli extends BaseController
     {
         $nama = session()->get('nama');
         if ($nama) {
+            $tanaman = $this->tanamanModel->orderBy('idTanaman', 'DESC')->findAll();
             $user = $this->userModel->getJenisUser(session()->get('email'));
             $data = [
                 'title' => 'Home',
                 'nama' => $user['nama'],
                 'foto' => $user['foto'],
+                'tanaman' => $tanaman
             ];
             return view('pembeli/index', $data);
         } else {
@@ -108,5 +110,38 @@ class Pembeli extends BaseController
         ]);
         session()->setFlashdata('pesan', 'Data diri berhasil diubah');
         return redirect()->to('/pembeli/profil');
+    }
+    public function listproduk()
+    {
+        $user = $this->userModel->getJenisUser(session()->get('email'));
+        $keyword = $this->request->getVar('search');
+        if ($keyword) {
+            $tanaman = $this->tanamanModel->search($keyword)->findAll();
+        } else {
+            $tanaman = $this->tanamanModel->findAll();
+        }
+        $data = [
+            'title' => 'List Produk',
+            'nama' => $user['nama'],
+            'foto' => $user['foto'],
+            'tanaman' => $tanaman,
+        ];
+        return view('pembeli/listproduk', $data);
+    }
+    public function detail($id)
+    {
+        $tanaman = $this->tanamanModel->getSpesifik($id);
+        $penjual = $this->userModel->getUser($tanaman['idPenjual']);
+        $user = $this->userModel->getJenisUser(session()->get('email'));
+        $tanamanPenjual = $this->tanamanModel->getTanaman($penjual['id']);
+        $data = [
+            'title' => 'Detail',
+            'tanaman' => $tanaman,
+            'penjual' => $penjual,
+            'nama' => $user['nama'],
+            'foto' => $user['foto'],
+            'tanamanpenjual' => $tanamanPenjual
+        ];
+        return view('pembeli/detail', $data);
     }
 }

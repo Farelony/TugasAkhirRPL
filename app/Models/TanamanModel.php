@@ -17,4 +17,10 @@ class TanamanModel extends Model
     {
         return $this->where(['idTanaman' => $id])->first();
     }
+    public function search($keyword)
+    {
+        $builder = $this->table('tanamanhias');
+        $builder->like('namaTanaman', $keyword);
+        return $builder;
+    }
 }

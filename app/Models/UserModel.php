@@ -14,4 +14,8 @@ class UserModel extends Model
     {
         return $this->where(['email' => $email])->first();
     }
+    public function getUser($id)
+    {
+        return $this->where(['id' => $id])->first();
+    }
 }
