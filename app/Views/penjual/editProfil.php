@@ -41,7 +41,6 @@
                     <?= $validation->getError('nohp') ?>
                 </div>
                 <br>
-                <button type="button" class="btn btn-primary" style="background-color:#A6A971;" href="/pembeli/profil">Batalkan</button>
                 <button type="submit" class="btn btn-primary" style="background-color:#A6A971;">Rubah</button>
             </div>
         </div>

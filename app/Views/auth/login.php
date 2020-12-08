@@ -8,7 +8,7 @@
                     Log in
                 </span>
                 <?php if (session()->getFlashdata('pesan')) : ?>
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-success" role="alert">
                         <?= session()->getFlashdata('pesan'); ?>
                     </div>
                 <?php elseif (session()->getFlashdata('warning')) : ?>

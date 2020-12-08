@@ -3,13 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\TanamanModel;
 
 class Pembeli extends BaseController
 {
     protected $userModel;
+    protected $tanamanModel;
     public function __construct()
     {
         $this->userModel = new UserModel();
+        $this->tanamanModel = new TanamanModel();
     }
     public function index()
     {

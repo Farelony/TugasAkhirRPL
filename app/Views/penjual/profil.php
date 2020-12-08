@@ -9,7 +9,7 @@
 <div class="container-datadiri">
     <div class="row">
         <div class="column">
-            <img src="<?= base_url() ?>/img/user/<?= $foto ?>" style="width:380px; height:380px;margin-right: 64px;">
+            <img src="<?= base_url() ?>/img/user/<?= $foto ?>" style="width:300px; height:300px;margin-right: 64px;">
         </div>
         <div class="column">
             <div class="row" id="judul">

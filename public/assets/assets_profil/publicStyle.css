@@ -3,6 +3,106 @@
     width: 100%;
     background-color: var(--bg);
 }
+/* Card Barang */
+.container-card{
+    width: 85%;
+    max-width: 1250px;
+    margin: 72px auto;
+    align-items: center;
+}
+.news-grid{
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px; 
+}
+
+.news-grid-item{
+    display: flex;
+    flex-direction: column;
+    color: var(--color-cream);
+    background-color:#C6BAA4;
+    max-width: 270px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    align-self: stretch;
+	
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
+	transition: 0.3s;
+}
+.news-grid-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+  }
+  
+  .news-grid div h3{
+      width: 80%;
+      font-family: var(--font-subhead);
+      max-height: inherit;
+  }
+  
+  .news-grid img{
+      margin: 10px 10px 20px;
+      max-width: 100%;
+  }
+  
+  .news-grid h3, .news-grid p, .news-grid a{
+      padding: 0 10px 0;
+  }
+  
+  .news-grid p{
+      font-size: 17px;
+  }
+  
+  .news-grid a{
+      font-family: var(--font-paragraph);
+      font-size: var(--font-paragraph-size);
+      padding-bottom: 20px;
+      color:#0067b8;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-decoration: none;
+  }
+  
+  #news-grid-timestamp{
+      padding: 0 10px 0;
+      text-align: right;
+  }
+  
+  .news-grid a:hover{
+      margin-left: 10px;
+      
+  }
+  
+  .news-title{
+      font-family: var(--font-head);
+      font-size: 40px;
+      margin-left: -50px;
+      color: var(--color-red);
+  }
+  
+  .news-article{
+      text-align: justify;
+      background-color: var(--color-yellow);
+      color: var(--color-black);
+      padding: 35px;
+      width: 75%;
+  }
+  
+  .news-article p{
+      padding-top: 15px;
+  }
+  
+  .news-article-layout{
+      display: flex;
+      flex-direction: row;
+      grid-gap: 15px; 
+  }
+  
+  .news-article img{
+      width: 100%;
+      object-fit: cover;
+  }
+/**/
 .column{
     float: left;
     height: fit-content;
@@ -52,9 +152,10 @@
     font-size: 36px;
 }
 #judul{
-    font-weight: 600;
     font-family: Roboto;
-    font-size: 80px;
+    font-size: 48px;
+    font-weight: 600;
+    left: 80px;
 }
 #posisiFix{
         position: absolute;
@@ -91,7 +192,7 @@
 
 #judul {
     font-family: Roboto;
-    font-size: 64px;
+    font-size: 54px;
     font-style: italic;
     font-weight: 600;
 }
@@ -101,4 +202,35 @@
     font-size: 48px;
     font-weight: 300;
 }
-  
+.container-fluid {
+    margin-top: 40px;
+    padding-bottom: 30px;
+}
+
+a.tambah {
+    background-color: #A6A971;
+    padding: 4px;
+    float: right;
+    font-family: Roboto;
+    border: #453B37;
+    border-style: solid;
+    border-radius: 60px;
+    font-size: 36px;
+    font-weight: 450;
+    position: absolute;
+    right: 80px;
+    border-width: 2px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+}    
+#judul-tanaman {
+    float: left;
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 600;
+    position: absolute;
+    left: 80px;
+}
