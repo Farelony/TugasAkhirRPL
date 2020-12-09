@@ -9,10 +9,10 @@
             <div class="row" id="judul">
                 <?= $tanaman['namaTanaman'] ?>
             </div>
-            <div class="row" id="subjudul">
+            <div class="row" id="subjudul-detail">
                 Rp.<?= $tanaman['harga'] ?>
             </div>
-            <div class="row" id="subjudul">
+            <div class="row" id="subjudul-detail">
                 <p style="white-space: pre-line"><?= $tanaman['deskripsi'] ?></p>
             </div>
         </div>
@@ -23,23 +23,28 @@
         <div class="column">
             <img src="<?= base_url() ?>/img/user/<?= $penjual['foto'] ?>" style="width:120px; height:120px;margin-right: 24px;">
         </div>
-        <div class="column">
+        <div class="column" style="margin: 0px 20px;float: left; width: 15%;">
             <div class="row" id="judul">
                 <?= $penjual['nama'] ?>
             </div>
-            <div class="row" id="subJudul">
+            <div class="row" id="subJudul-detail">
                 <?= $penjual['alamat'] ?>
             </div>
-            <div class="row" id="subJudul">
+            <div class="row" id="subJudul-detail">
                 <?= $penjual['nohp'] ?>
             </div>
+            <div class="row" id="subjudul-detail">
+                <a href="/pembeli/lapor/<?= $id ?>/<?= $penjual['id'] ?>">Laporkan Penjual</a>
+            </div>
         </div>
-    </div>
-    <div class="row" id="judul-detail">
-        Tips-tips berkebun
-    </div>
-    <div class="row" id="subJudul-detail">
-        <p style="white-space: pre-line"><?= $tanaman['tips'] ?></p>
+        <div class="column" id="judul-detail" style="float: left; width: 60%;">
+            <div class="row" id="judul-detail">
+                Tips-tips berkebun
+            </div>
+            <div class="row" id="subJudul-detail">
+                <p style="white-space: pre-line"><?= $tanaman['tips'] ?></p>
+            </div>
+        </div>
     </div>
     <hr class="solid-detail">
     <div class="row" id="judul">
@@ -50,7 +55,7 @@
             <?php $i = 1 ?>
             <?php foreach ($tanamanpenjual as $t) : ?>
                 <div class="news-grid-item">
-                    <img src="<?= base_url() ?>/img/tanaman/<?= $t['foto'] ?>" alt="" style="max-width:240px;max-height:220px">
+                    <img src="<?= base_url() ?>/img/tanaman/<?= $t['foto'] ?>" alt="" style="width:240px;height:240px;object-fit: cover;">
                     <h4 id="news-grid-timestamp"><?= $t['namaTanaman'] ?></h4>
                     <h4 id="news-grid-timestamp">Rp.<?= $t['harga'] ?></h4>
                     <a href="/pembeli/detail/<?= $t['idTanaman'] ?>">Lihat Detail</a>

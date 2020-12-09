@@ -24,7 +24,7 @@
                     <li id="judul"></li>
                     <li class="nav-item dropdown" style="margin-left: 12px;" id="posisiFix">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="<?= base_url() ?>/img/user/<?= $foto ?>" style="width:64px; height:64px;" alt="">
+                            <img src="<?= base_url() ?>/img/user/<?= $foto ?>" style="width:64px; height:64px;object-fit: cover;" alt="">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"><?= $nama ?></a>
@@ -39,18 +39,18 @@
     </div>
     </div>
     <?= $this->renderSection('penjual'); ?>
-    <div class="container-fluid" style="background-color: #C6BAA4;">
+    <div class="container-fluid" id="footer">
         <div class="row" style="margin-left: 1%;">
             <div class="column" id="h3" style="width: 98%;">Customer Service</div>
-            <div class="column" id="p" style="width: 18%;">081122334455</div>
-            <div class="column" style="width: 76%;">
-                <iconify-icon data-icon="ant-design:phone-filled" style="width: auto; height: 42px;"></iconify-icon>
+            <div class="column" id="p" style="width: 13%;">081122334455</div>
+            <div class="column" style="width: 81%;">
+                <iconify-icon data-icon="ant-design:phone-filled" style="width: auto; height: 36px;"></iconify-icon>
             </div>
         </div>
         <div class="row" style="margin-left: 1%;">
-            <div class="column" id="p" style="width: 18%;">@plantae.id</div>
-            <div class="column" style="width: 10%;">
-                <iconify-icon data-icon="ant-design:instagram-filled" style="width: auto; height: 42px;"></iconify-icon>
+            <div class="column" id="p" style="width: 13%;">@plantae.id</div>
+            <div class="column" style="width: 15%;">
+                <iconify-icon data-icon="ant-design:instagram-filled" style="width: auto; height: 36px;"></iconify-icon>
             </div>
             <div class="column" style="text-align-last: right;width: 70%;" id="p">©2020 PT Plantae</div>
         </div>

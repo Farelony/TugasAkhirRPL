@@ -37,6 +37,8 @@ class Auth extends BaseController
                     return redirect()->to('/pembeli');
                 } elseif ($user['jenis_user'] == "2") {
                     return redirect()->to('/penjual');
+                } elseif ($user['jenis_user'] == "3") {
+                    return redirect()->to('/admin');
                 }
             } else {
                 session()->setFlashdata('warning', 'Password anda tidak sesuai');

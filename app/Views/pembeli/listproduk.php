@@ -1,25 +1,23 @@
 <?= $this->extend('layout/pembeli'); ?>
 <?= $this->section('pembeli'); ?>
-<div class="whitebg-list">
-    <div class="container-list">
+
+<div class="container-card">
+    <section class="news-grid">
+        <?php $i = 1 ?>
         <?php foreach ($tanaman as $t) : ?>
-            <div class="list-item">
-                <hr class="solid-list">
-                <div class="row-list">
-                    <div class="col-3">
-                        <img class="gambar-list" src="<?= base_url() ?>/img/tanaman/<?= $t['foto'] ?>" alt="">
-                    </div>
-                    <div class="col-2">
-                        <p class="judul-list"><?= $t['namaTanaman'] ?></p>
-                        <p class="harga-list">Rp.<?= $t['harga'] ?></p>
-                    </div>
-                    <div class="col-lg">
-                        <p class="desc" style="white-space: pre-line"><?= $t['deskripsi'] ?></p>
-                        <a href="/pembeli/detail/<?= $t['idTanaman'] ?>">Tertarik ?</a>
-                    </div>
-                </div>
+            <div class="news-grid-item">
+                <img src="<?= base_url() ?>/img/tanaman/<?= $t['foto'] ?>" alt="" style="width:240px;height:240px;object-fit: cover;">
+                <h4 id="news-grid-timestamp"><?= $t['namaTanaman'] ?></h4>
+                <h4 id="news-grid-timestamp">Rp.<?= $t['harga'] ?></h4>
+                <a href="/pembeli/detail/<?= $t['idTanaman'] ?>">Lihat Detail</a>
             </div>
+            <?php if ($i++ == 4) {
+                break;
+            } ?>
         <?php endforeach; ?>
-    </div>
+    </section>
+    <?php if (sizeOf($tanaman) > 4) : ?>
+        <a href="/pembeli/listproduk">Lihat Lebih Lengkap </a>
+    <?php endif ?>
 </div>
 <?= $this->endSection(); ?>

@@ -1,7 +1,7 @@
 <?= $this->extend('layout/pembeli'); ?>
 <?= $this->section('pembeli'); ?>
 <br>
-<h2>Edit Profil Anda </h2>
+<h2 style="font-size: 40px;">Edit Profil Anda </h2>
 <div class="container-datadiri">
     <form action="/pembeli/edit" method="POST" enctype="multipart/form-data">
         <div class="row">

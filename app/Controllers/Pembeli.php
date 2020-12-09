@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\KeluhanModel;
 use App\Models\UserModel;
 use App\Models\TanamanModel;
 
@@ -9,10 +10,12 @@ class Pembeli extends BaseController
 {
     protected $userModel;
     protected $tanamanModel;
+    protected $keluhanModel;
     public function __construct()
     {
         $this->userModel = new UserModel();
         $this->tanamanModel = new TanamanModel();
+        $this->keluhanModel = new KeluhanModel();
     }
     public function index()
     {
@@ -138,10 +141,57 @@ class Pembeli extends BaseController
             'title' => 'Detail',
             'tanaman' => $tanaman,
             'penjual' => $penjual,
+            'id' => $user['id'],
             'nama' => $user['nama'],
             'foto' => $user['foto'],
             'tanamanpenjual' => $tanamanPenjual
         ];
         return view('pembeli/detail', $data);
+    }
+    public function lapor($pembeli, $penjual)
+    {
+        $penjual = $this->userModel->getUser($penjual);
+        $user = $this->userModel->getJenisUser(session()->get('email'));
+        $data = [
+            'title' => 'Laporkan Penjual',
+            'nama' => $user['nama'],
+            'foto' => $user['foto'],
+            'penjual' => $penjual,
+            'id' => $pembeli,
+            'validation' => \Config\Services::validation()
+        ];
+        return view('pembeli/lapor', $data);
+    }
+    public function report()
+    {
+        helper(['form', 'url']);
+        $idPembeli = $this->request->getVar('pembeli');
+        $idPenjual = $this->request->getVar('penjual');
+        if (!$this->validate([
+            'keluhan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Keluhan Harus Diisi'
+                ]
+            ]
+        ])) {
+            return  redirect()->to('/pembeli/lapor/' . $idPembeli . '/' . $idPenjual)->withInput();
+        }
+        $buktiKeluhan = $this->request->getFile('foto');
+        if ($buktiKeluhan->getError() == 4) {
+            return  redirect()->to('/pembeli/lapor/' . $idPembeli . '/' . $idPenjual);
+        } else {
+            $namaFoto = $buktiKeluhan->getRandomName();
+            $buktiKeluhan->move('img/keluhan/', $namaFoto);
+        }
+        $this->keluhanModel->save([
+            'idPenjual' => $idPenjual,
+            'idPembeli' => $idPembeli,
+            'keluhan' => $this->request->getVar('keluhan'),
+            'bukti' => $namaFoto,
+            'Status' => False
+        ]);
+        session()->setFlashdata('pesan', 'Keluhan berhasil dilaporkan');
+        return redirect()->to('/pembeli');
     }
 }

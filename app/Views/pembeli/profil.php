@@ -9,10 +9,10 @@
 <div class="container-datadiri">
     <div class="row">
         <div class="column">
-            <img src="<?= base_url() ?>/img/user/<?= $foto ?>" style="width:380px; height:380px;margin-right: 64px;">
+            <img src="<?= base_url() ?>/img/user/<?= $foto ?>" style="width:240px; height:240px;margin-right: 64px; object-fit: cover;">
         </div>
         <div class="column">
-            <div class="row" id="judul">
+            <div class="row" id="judulNama">
                 <?= $nama ?>
             </div>
             <div class="row" id="subJudul">
