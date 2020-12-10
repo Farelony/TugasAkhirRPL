@@ -14,8 +14,12 @@ class UserModel extends Model
     {
         return $this->where(['email' => $email])->first();
     }
-    public function getUser($id)
+    public function getUser($id = false)
     {
-        return $this->where(['id' => $id])->first();
+        if (!$id) {
+            return $this->findAll();
+        } else {
+            return $this->where(['id' => $id])->first();
+        }
     }
 }

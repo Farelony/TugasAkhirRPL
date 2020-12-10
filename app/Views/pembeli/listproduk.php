@@ -11,13 +11,7 @@
                 <h4 id="news-grid-timestamp">Rp.<?= $t['harga'] ?></h4>
                 <a href="/pembeli/detail/<?= $t['idTanaman'] ?>">Lihat Detail</a>
             </div>
-            <?php if ($i++ == 4) {
-                break;
-            } ?>
         <?php endforeach; ?>
     </section>
-    <?php if (sizeOf($tanaman) > 4) : ?>
-        <a href="/pembeli/listproduk">Lihat Lebih Lengkap </a>
-    <?php endif ?>
 </div>
 <?= $this->endSection(); ?>

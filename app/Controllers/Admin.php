@@ -18,9 +18,14 @@ class Admin extends BaseController
     public function index()
     {
         $keluhan = $this->keluhanModel->findKeluhan();
-        foreach ($keluhan as $k) {
-            $pembeli[] = $this->userModel->getUser($k['idPembeli']);
-            $penjual[] = $this->userModel->getUser($k['idPenjual']);
+        if ($keluhan == null) {
+            $pembeli = [];
+            $penjual = [];
+        } else {
+            foreach ($keluhan as $k) {
+                $pembeli[] = $this->userModel->getUser($k['idPembeli']);
+                $penjual[] = $this->userModel->getUser($k['idPenjual']);
+            }
         }
         $data = [
             'keluhan' => $keluhan,
